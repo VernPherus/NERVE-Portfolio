@@ -1,8 +1,21 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400,700&display=swap';
- * {
+
+:root{
+    --primary : #e9977f;
+    --secondary : #9e2e0d ;
+    --accent : #fe4610 ;
+    --background: #140906;
+    --text : #f6edea;
+}
+
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body{
+    background-color: var(--background);
 }
 
 html {
@@ -30,7 +43,7 @@ img {
 }
 
 p {
-    color: black;
+    color: var(--text);
     font-size: 1.4rem;
     margin-top: 5px;
     line-height: 2.5rem;
@@ -41,7 +54,7 @@ p {
 .section-title {
     font-size: 4rem;
     font-weight: 300;
-    color: black;
+    color: var(--text);
     margin-bottom: 10px;
     text-transform: uppercase;
 
@@ -50,15 +63,15 @@ p {
 }
 
 .section-title span {
-    color: crimson;
+    color: var(--accent);
 }
 
 .cta {
     display: inline-block;
     padding: 10px 30px;
-    color: white;
+    color: var(--text);
     background-color: transparent;
-    border: 2px solid crimson;
+    border: 2px solid var(--accent);
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -68,18 +81,18 @@ p {
 }
 
 .cta:hover {
-    color: white;
-    background-color: crimson;
+    color: var(--text);
+    background-color: var(--accent);
 }
 
 .brand h1 {
     font-size: 3rem;
     text-transform: uppercase;
-    color: white;
+    color: var(--text);
 }
 
 .brand h1 span {
-    color: crimson;
+    color: var(--secondary);
 }
 
 /* Header section */
@@ -95,7 +108,7 @@ p {
 #header .header {
 
     min-height: 8vh;
-    background-color: rgba(31, 30, 30, 0.24);
+    background-color: rgba(158, 46, 13, 0.24);
     transition: 0.3s ease background-color;
 }
 
@@ -135,7 +148,7 @@ p {
     font-weight: 500;
     letter-spacing: 0.2rem;
     text-decoration: none;
-    color: white;
+    color: var(--text);
     text-transform: uppercase;
     padding: 20px;
     display: block;
@@ -161,7 +174,7 @@ p {
 }
 
 #header .nav-list ul li:hover a {
-    color: crimson;
+    color: var(--accent);
 }
 
 #header .hamburger {
@@ -262,47 +275,9 @@ p {
     width: fit-content;
     font-size: 4rem;
     position: relative;
-    color: transparent;
-    animation: text_reveal 0.5s ease forwards;
-    animation-delay: 1s;
+    color: var(--text);
 }
 
-#hero h1:nth-child(1) {
-    animation-delay: 1s;
-}
-
-#hero h1:nth-child(2) {
-    animation-delay: 2s;
-}
-
-#hero h1:nth-child(3) {
-    animation: text_reveal_name 0.5s ease forwards;
-    animation-delay: 3s;
-}
-
-#hero h1 span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background-color: crimson;
-    animation: text_reveal_box 1s ease;
-    animation-delay: 0.5s;
-}
-
-#hero h1:nth-child(1) span {
-
-    animation-delay: 0.5s;
-}
-
-#hero h1:nth-child(2) span {
-    animation-delay: 1.5s;
-}
-
-#hero h1:nth-child(3) span {
-    animation-delay: 2.5s;
-}
 
 /* End Hero Section */
 /* Services Section */
@@ -364,13 +339,13 @@ p {
 
 #services .service-item h2 {
     font-size: 2rem;
-    color: white;
+    color: var(--text);
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
 #services .service-item p {
-    color: white;
+    color: var(--text);
     text-align: left;
 }
 
@@ -414,8 +389,8 @@ p {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-    color: white;
+    background-image: linear-gradient(60deg, #641c06 0%, #d16d4f 100%);
+    color: var(--text);
 }
 
 #projects .project-info h1 {
@@ -430,7 +405,7 @@ p {
 }
 
 #projects .project-info p {
-    color: white;
+    color: var(--text);
 }
 
 #projects .project-img {
@@ -491,7 +466,7 @@ p {
 }
 
 #about .col-right .cta {
-    color: black;
+    color: var(--text);
 
     margin-bottom: 50px;
     padding: 10px 20px;
@@ -502,7 +477,7 @@ p {
     height: 100%;
     width: 100%;
     position: relative;
-    border: 10px solid white;
+    border: 10px solid var(--text);
 }
 
 #about .col-left .about-img::after {
@@ -512,11 +487,12 @@ p {
     top: 19px;
     height: 98%;
     width: 98%;
-    border: 7px solid crimson;
+    border: 7px solid var(--secondary);
     z-index: -1;
 }
 
 /* End About Section */
+
 /* contact Section */
 #contact .contact {
     flex-direction: column;
@@ -542,12 +518,12 @@ p {
     align-items: center;
 
     flex-direction: column;
-    box-shadow: 0px 0px 18px 0 #0000002c;
+    box-shadow: 0px 0px 18px 0 #e9977f;
     transition: 0.3s ease box-shadow;
 }
 
 #contact .contact-item:hover {
-    box-shadow: 0px 0px 5px 0 #0000002c;
+    box-shadow: 0px 0px 5px 0 #e9977f;
 }
 
 #contact .icon {
@@ -569,9 +545,10 @@ p {
 }
 
 /*End contact Section */
+
 /* Footer */
 #footer {
-    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    background-image: radial-gradient(circle, #491204 0%, #140906 100%);
 }
 
 #footer .footer {
@@ -582,7 +559,7 @@ p {
 }
 
 #footer h2 {
-    color: white;
+    color: var(--text);
     font-weight: 500;
     font-size: 1.8rem;
     letter-spacing: 0.1rem;
@@ -612,7 +589,7 @@ p {
 }
 
 #footer p {
-    color: white;
+    color: var(--text);
     font-size: 1.3rem;
 }
 
@@ -645,13 +622,13 @@ p {
 @keyframes text_reveal {
 
     100% {
-        color: white;
+        color: var(--text);
     }
 }
 
 @keyframes text_reveal_name {
     100% {
-        color: crimson;
+        color: var(--primary);
         font-weight: 500;
     }
 }
@@ -681,6 +658,7 @@ p {
     }
 
     /* End Services Section */
+
     /* Project */
     #projects .project-item {
         flex-direction: row;
@@ -707,6 +685,7 @@ p {
     }
 
     /* End Project */
+
     /* About */
     #about .about {
         flex-direction: row;
@@ -723,7 +702,7 @@ p {
         top: 34px;
         height: 98%;
         width: 98%;
-        border: 10px solid crimson;
+        border: 10px solid var(--secondary);
     }
 
     #about .col-right {
@@ -736,8 +715,11 @@ p {
     }
 
     /* End About */
+
     /* contact */
     #contact .contact {
+        color: var(--text);
+
         flex-direction: column;
         padding: 100px 0;
         align-items: center;
