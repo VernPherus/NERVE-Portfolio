@@ -243,7 +243,7 @@ p {
 /* End Header section */
 /* Hero Section */
 #hero {
-    background-image: url(./img/hero-bg.png);
+    background-color: var(--background);
     background-size: cover;
     background-position: top center;
     position: relative;
@@ -258,7 +258,6 @@ p {
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: black;
     opacity: 0.7;
     z-index: -1;
 }
@@ -278,7 +277,60 @@ p {
     color: var(--text);
 }
 
+.wrapper {
+    display: inline-flex;
+}
 
+.wrapper .static-txt{
+    color: var(--text);
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-txts{
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    color: var(--accent);
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4) infinite;
+}
+
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span{
+    position: relative;
+}
+
+.dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--background);
+    border-left: 2px solid var(--accent);
+    animation: typing 1.5s steps(13) infinite;
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
 
 /* End Hero Section */
 /* Services Section */
